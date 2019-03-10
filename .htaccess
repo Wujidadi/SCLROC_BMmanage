@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule ^(homepage)$ $1\.php [nc]
+RewriteRule ^(book)$ $1\.php [nc]
+RewriteRule ^(member)$ $1\.php [nc]
+RewriteRule ^(society)$ $1\.php [nc]
+RewriteRule ^(circulation)$ $1\.php [nc]
+RewriteRule ^(test)$ $1\.php [nc]

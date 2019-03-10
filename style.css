@@ -1,0 +1,1378 @@
+/*======================================================================================*/
+/* 字體
+/*======================================================================================*/
+@font-face {
+    font-family: Exception;
+    src: local('PMingLiU');
+    unicode-range: U+2026, U+2500;
+}
+@font-face {
+    font-family: 標楷體;
+    src: local('標楷體'),
+         local('BiauKai'),
+         local('DFKaiShu-SB-Estd-BF');
+}
+
+/*======================================================================================*/
+/* 全局
+/*======================================================================================*/
+html {
+    font-family: Exception, Arial, PMingLiU;
+}
+body {
+    /*width: 1887px;*/
+    margin: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 0px solid blue;
+}
+
+/*======================================================================================*/
+/* 登入區
+/*======================================================================================*/
+#loginText, #loginFailText {
+    font-size: 0.8em;
+    text-align: right;
+    width: 175px;
+    position: absolute;
+    top: 5px;
+    left: calc(50% + 250px);
+    z-index: 2;
+}
+#login {
+    color: blue;
+    cursor: pointer;
+}
+#login:hover {
+    opacity: 0.75;
+}
+#loginForm {
+    display: none;
+    width: 70%;
+    margin-top: 3px;
+    margin-left: auto;
+    line-height: 2em;
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: 3px 3px 20px 1px grey;
+}
+#loginForm input:not([type="submit"]):not([type="reset"]) {
+    width: 60%;
+}
+.loginButton {
+    width: 46%;
+}
+#logoutForm {
+    display: inline-block;
+}
+#logout {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*======================================================================================*/
+/* 標題
+/*======================================================================================*/
+#TitleHome {
+    color: red;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+    margin: 1.2em auto 4px;
+    -webkit-text-stroke: 0px black;
+    text-shadow: 0px 0px 5px black !important;
+    position: relative;
+    z-index: 0;
+}
+#TitleHome:before {
+    content: attr(data-text);
+    -webkit-text-stroke: 5px black;
+    position: absolute;
+    z-index: -1;
+}
+#SubtitleHome {
+    color: gold;
+    font-size: 1.7em;
+    text-align: center;
+    margin: auto;
+    -webkit-text-stroke: 0px black;
+    text-shadow: 0px 0px 5px black !important;
+    line-height: 1.3em;
+    position: relative;
+    z-index: 0;
+}
+#SubtitleHome:before {
+    content: attr(data-text);
+    -webkit-text-stroke: 5px black;
+    position: absolute;
+    z-index: -1;
+}
+#HomeTitle {
+    font-family: 標楷體;
+    display: table-cell;
+    margin: auto;
+    width: inherit;
+    height: 190px;
+    padding: 6px;
+    background-color: #fff5;
+    vertical-align: middle;
+}
+#HomeTitleSoftEdge {
+    width: 600px;
+    height: 200px;
+    margin: -1em auto auto;
+    padding: 6px;
+    border: 0px solid red;
+    background: url(header.jpg);
+    background-size: 100%;
+    position: relative;
+    z-index: -2;
+}
+#HomeTitleSoftEdge:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    box-shadow: 0 20px 40px 50px #ffffff inset;
+}
+#TitleBook {
+    text-align: center;
+    margin-top: 8px;
+    background: radial-gradient(gold, yellow 75%);
+    box-shadow: 5px 5px 20px 3px yellow;
+}
+#TitleMember {
+    text-align: center;
+    margin-top: 8px;
+    background: radial-gradient(limegreen, chartreuse 75%);
+    box-shadow: 5px 5px 20px 3px chartreuse;
+}
+#TitleCirculation {
+    text-align: center;
+    margin-top: 8px;
+    background: radial-gradient(dodgerblue, lightskyblue 75%);
+    box-shadow: 5px 5px 20px 3px lightskyblue;
+}
+
+/*======================================================================================*/
+/* 首頁切換功能
+/*======================================================================================*/
+#FuntionSwitch {
+    margin: auto;
+    text-align: center;
+}
+.switchButton {
+    display: inline-block;
+    font-size: 14pt;
+    font-family: 標楷體;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    width: 13em;
+    line-height: 2.5em;
+    border-radius: 25px;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+}
+#GoToBook {
+    background: linear-gradient(yellow, orange);
+    border: 4px ridge orange;
+    box-shadow: 2.5px 3.5px 6px 2px #b37400;
+    position: relative;
+    z-index: 2;
+}
+#GoToBook:hover {
+    color: yellow;
+    background: linear-gradient(blue, #005aff);
+    border: 4px ridge #005aff;
+}
+#GoToMember {
+    background: linear-gradient(chartreuse, green);
+    border: 4px ridge green;
+    box-shadow: 2.5px 3.5px 6px 2px #003400;
+    position: relative;
+    z-index: 2;
+}
+#GoToSociety {
+    background: linear-gradient(#66cc00, #004d00);
+    border: 4px ridge green;
+    box-shadow: 2.5px 3.5px 6px 2px #001b00;
+    position: relative;
+    z-index: 2;
+}
+#GoToMember:hover {
+    color: red;
+    background: linear-gradient(#8000ff, #800080);
+    border: 4px ridge #800080;
+}
+#GoToSociety:hover {
+    color: red;
+    background: linear-gradient(#6600cc, #4d004d);
+    border: 4px ridge #800080;
+}
+#GoToMember {
+    margin-bottom: 5px;
+}
+#GoToSociety {
+    margin-top: 5px;
+}
+#GoToCirculation {
+    background: linear-gradient(lightskyblue, royalblue);
+    border: 4px ridge royalblue;
+    box-shadow: 2.5px 3.5px 6px 2px #1d44b8;
+    position: relative;
+    z-index: 2;
+}
+#GoToCirculation:hover {
+    color: #2b58de;
+    background: linear-gradient(#fab387, #e1b941);
+    border: 4px ridge #e1b941;
+}
+
+/*======================================================================================*/
+/* 首頁歡迎辭、顯示當前時間及各類提示
+/*======================================================================================*/
+#welcome {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+}
+#greeting {
+    color: red;
+}
+#today {
+    color: darkgreen;
+}
+#present {
+    color: blue;
+}
+#informationSwitch {
+    margin: auto;
+    text-align: center;
+}
+.informBtn {
+    display: inline-block;
+    border: 3px double grey;
+    border-radius: 10px;
+    padding: 5px;
+    width: 10em;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+}
+#circulationInformation {
+    background: linear-gradient(hotpink, pink);
+}
+#memberInformation {
+    background: linear-gradient(palegreen, white);
+}
+#circulationInformation:hover, #memberInformation:hover {
+    background: linear-gradient(#fef65b, #fefdde);
+}
+#circulationSituation {
+    display: initial;
+}
+#memberSituation {
+    display: none
+}
+.unreturned, .unrenewed {
+    text-align: center;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.unreturnedNum {
+    color: #ff8000;
+}
+#overdueNum, .unrenewedNum {
+    color: orangered;
+}
+#noUrtd {
+    color: #f687c4;
+}
+.daystip {
+    font-size: 0.85em;
+    color: grey;
+}
+.clicktr {
+    cursor: help;
+}
+.mbodn {
+    width: 3.5em;
+}
+.mbodm {
+    width: 4.5em;
+}
+
+/*======================================================================================*/
+/* 表格
+/*======================================================================================*/
+table, tr, th, td {
+    border-collapse: collapse;
+}
+#homepageUrtd, #soondueUrtd, #homepageMbod {
+    margin: auto;
+    font-size: 0.85rem;
+}
+#homepageMbod {
+    transform: translateX(calc(50% - 3.4em));
+}
+.urtdmn {
+    width: 3.5em;
+}
+.urtdmm {
+    width: 4.5em;
+}
+.urtdur {
+    width: 2.5em;
+    text-align-last: right;
+}
+table#BookData, table#MemberData, table#SocietyData, table#CirculationData {
+    width: 100%;
+    font-size: 0.875em;
+}
+table#BookData, table#BookData tr, table#BookData th, table#BookData td,
+table#MemberData, table#MemberData tr, table#MemberData th, table#MemberData td,
+table#SocietyData, table#SocietyData tr, table#SocietyData th, table#SocietyData td,
+table#CirculationData, table#CirculationData tr, table#CirculationData th, table#CirculationData td {
+    border-collapse: collapse;
+    border: 0px solid;
+    vertical-align: middle;
+    word-break: break-all;
+}
+table#BookData th {
+    background: linear-gradient(rgba(255, 255, 178, 1.0), rgba(143, 189, 104, 1.0) 60%, rgba(30, 123, 30, 1.0));
+}
+table#MemberData th {
+    background: linear-gradient(#e4ebff, #8299eA 60%, #4a67cf);
+}
+table#SocietyData th {
+    background: linear-gradient(#e4ebff, #8299eA 60%, #4a67cf);
+}
+table#CirculationData th {
+    background: linear-gradient(#ffe9ec, #ff8396);
+}
+table#BookData th, table#BookData td,
+table#MemberData th, table#MemberData td,
+table#SocietyData th, table#SocietyData td,
+table#CirculationData th, table#CirculationData td {
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+}
+table#BookData tbody tr:nth-child(even) td,
+table#MemberData tbody tr:not(.honorMember):not(.deadMember):nth-child(even) td,
+table#SocietyData tbody tr:nth-child(even) td,
+table#CirculationData tbody tr:nth-child(even) td {
+    background: linear-gradient(silver, rgba(240, 240, 240, 1.0));
+}
+table#BookData tbody tr:hover td,
+table#MemberData tbody tr:hover td,
+table#SocietyData tbody tr:hover td,
+table#CirculationData tbody tr:hover td {
+    background: none;
+}
+table#BookData tbody tr:hover td {
+    background: linear-gradient(lemonchiffon, gold);
+}
+table#MemberData tbody tr:hover td {
+    background: linear-gradient(#ffe2d7, lightsalmon) !important;
+}
+table#SocietyData td {
+    line-height: 1.25em;
+}
+table#SocietyData tbody tr:hover td {
+    background: linear-gradient(#ffe2d7, lightsalmon) !important;
+}
+table#CirculationData tbody tr:hover td {
+    background: linear-gradient(#ffe2d7, lightsalmon) !important;
+}
+table#CirculationData tbody tr.soondue:hover td {
+    color: blue;
+}
+.honorMember td {
+    background: linear-gradient(#ff5, #ffa 40%, #fff);
+}
+.deadMember {
+    background: linear-gradient(#caa7d4, #f4edf6);
+}
+
+/*各欄位（圖書資料管理介面）*/
+#ControlColumn, #ControlHead, .ControlCell {
+    width: 3.5em;
+}
+#ControlColumn, .ControlCell {
+    text-align: center;
+    font-size: 0;
+}
+#NumberColumn, #NumberHead, .NumberCell {
+    width: 4.25%;
+}
+#NumberColumn, .NumberCell {
+    text-align: center;
+}
+#NameColumn, #NameHead, .NameCell {
+    width: 18%;
+}
+.NumberCell span, .NameCell span {
+    cursor: pointer;
+}
+#AuthorColumn, #AuthorHead, .AuthorCell {
+    width: 13.5%;
+}
+#IllustratorColumn, #IllustratorHead, .IllustratorCell {
+    width: 13.5%;
+}
+#TranslatorColumn, #TranslatorHead, .TranslatorCell {
+    width: 13.5%;
+}
+#PublisherColumn, #PublisherHead, .PublisherCell {
+    width: 13.5%;
+}
+#ContainerNumberColumn, #ContainerNumberHead, .ContainerNumberCell {
+    width: 3.375%;
+}
+#ContainerNumberColumn, .ContainerNumberCell {
+    text-align: center;
+}
+#NoteColumn, #NoteHead, .NoteCell {
+}
+
+/*各欄位（會員資料管理介面）*/
+#ControlCol, #ControlHd, .ControlCl {
+    width: 2.5em;
+}
+#ControlCol, .ControlCl {
+    text-align: center;
+    font-size: 0;
+}
+#NumberCol, #NumberHd, .NumberCl {
+    width: 2.7em;
+}
+#NumberCol, .NumberCl {
+    text-align: center;
+}
+.NumberCl span, .NameCl span {
+    cursor: pointer;
+}
+#NameCol, #NameHd, .NameCl {
+    width: 4.2em;
+}
+#NameCol, .NameCl {
+    text-align: center;
+}
+.nameWithNotes {
+    text-decoration: underline dashed red;
+}
+#PseudonymCol, #PseudonymHd, .PseudonymCl {
+    width: 5em;
+    display: none;
+}
+#PseudonymCol, .PseudonymCl {
+    text-align: center;
+}
+#GenderCol, #GenderHd, .GenderCl {
+    width: 2em;
+}
+#GenderCol, .GenderCl {
+    text-align: center;
+}
+#BirthdayCol, #BirthdayHd, .BirthdayCl,
+#JoindayCol, #JoindayHd, .JoindayCl,
+#EdCol, #EdHd, .EdCl {
+    width: 5.3em;
+    text-align: center;
+}
+#AncestralHomeCol, #AncestralHomeHd, .AncestralHomeCl {
+    width: 5em;
+    display: none;
+}
+#AncestralHomeCol, .AncestralHomeCl {
+    text-align: center;
+}
+#AddressCol, #AddressHd, .AddressCl {
+    width: 17.5%;
+}
+#HomeNumberCol, #HomeNumberHd, .HomeNumberCl,
+#OfficeNumberCol, #OfficeNumberHd, .OfficeNumberCl,
+#FaxNumberCol, #FaxNumberHd, .FaxNumberCl,
+#PhoneNumberCol, #PhoneNumberHd, .PhoneNumberCl {
+    width: 7%;
+}
+#HomeNumberCol, .HomeNumberCl {
+    text-align: center;
+}
+#OfficeNumberCol, .OfficeNumberCl {
+    text-align: center;
+}
+#FaxNumberCol, .FaxNumberCl {
+    text-align: center;
+}
+#PhoneNumberCol, .PhoneNumberCl {
+    text-align: center;
+}
+#EmailCol, #EmailHd, .EmailCl {
+    width: 13.8em;
+}
+#NoteCol, #NoteHd, .NoteCl {
+    /*width: 10em;*/
+}
+#NoteCol, .NoteCl {
+    text-align: center;
+}
+
+/*各欄位（團體會員資料管理介面）*/
+#sControlCol, #sControlHd, .sControlCl {
+    width: 2.5em;
+}
+#sControlCol, .sControlCl {
+    text-align: center;
+    font-size: 0;
+}
+#sNumberCol, #sNumberHd, .sNumberCl {
+    width: 3em;
+}
+#sNumberCol, .sNumberCl {
+    text-align: center;
+}
+.sNumberCl span, .sNameCl span, .sShortNameCl span {
+    cursor: pointer;
+}
+#sNameCol, #sNameHd, .sNameCl {
+    width: 10em;
+}
+.sNameCol span, .sNameCol span {
+    cursor: pointer;
+}
+#sNameCol, .sNameCl {
+    text-align: left;
+}
+#sShortNameCol, #sShortNameHd, .sShortNameCl {
+    width: 5em;
+}
+#sShortNameCol, .sShortNameCl {
+    text-align: center;
+}
+#sUCodeCol, #sUCodeHd, .sUCodeCl {
+    width: 5em;
+}
+#sUCodeCol, .sUCodeCl {
+    text-align: center;
+}
+#sJoindayCol, #sJoindayHd, .sJoindayCl,
+#sEdCol, #sEdHd, .sEdCl {
+    width: 5em;
+    text-align: center;
+}
+#sAddressCol, #sAddressHd, .sAddressCl {
+    width: 12em;
+}
+#sOfficeNumberCol, #sOfficeNumberHd, .sOfficeNumberCl,
+#sFaxNumberCol, #sFaxNumberHd, .sFaxNumberCl,
+#sRepresentPhoneCol, #sRepresentPhoneHd, .sRepresentPhoneCl,
+#sLiaisonPhoneCol, #sLiaisonPhoneHd, .sLiaisonPhoneCl {
+    width: 7em;
+    text-align: center;
+}
+#sPiCCol, #sPiCHd, .sPiCCl {
+    width: 5em;
+    text-align: center;
+}
+#sRepresentCol, #sRepresentHd, .sRepresentCl {
+    width: 5em;
+    text-align: center;
+}
+#sRepresentExtCol, #sRepresentExtHd, .sRepresentExtCl,
+#sLiaisonExtCol, #sLiaisonExtHd, .sLiaisonExtCl {
+    width: 2.5em;
+    text-align: center;
+}
+#sRepresentEmailCol, #sRepresentEmailHd, .sRepresentEmailCl,
+#sLiaisonEmailCol, #sLiaisonEmailHd, .sLiaisonEmailCl {
+    width: 14em;
+}
+#sLiaisonCol, #sLiaisonHd, .sLiaisonCl {
+    width: 9em;
+    text-align: center;
+}
+#sNoteCol, #sNoteHd, .sNoteCl {
+    /*width: 10em;*/
+}
+#sNoteCol, .sNoteCl {
+    text-align: left;
+}
+
+/*各欄位（借還書處理介面）*/
+#cControlCol, #cControlHead, .cControlCell {
+    width: 2.5em;
+}
+#cControlCol, .cControlCell {
+    font-size: 0;
+}
+#cBookNumberCol, #cBookNumberHead, .cBookNumberCell {
+    width: 10%;
+    text-align: center;
+}
+#cBookNameCol, #cBookNameHead, .cBookNameCell {
+    
+}
+#cMemberNumberCol, #cMemberNumberHead, .cMemberNumberCell {
+    width: 10%;
+    text-align: center;
+}
+#cMemberNameCol, #cMemberNameHead, .cMemberNameCell {
+    width: 10%;
+    text-align: center;
+}
+.cBookNumberCell span, .cBookNameCell span, .cMemberNumberCell span, .cMemberNameCell span {
+    cursor: pointer;
+}
+#cBorrowTimeCol, #cBorrowTimeHead, .cBorrowTimeCell {
+    width: 18%;
+    text-align: center;
+}
+#cReturnTimeCol, #cReturnTimeHead, .cReturnTimeCell {
+    width: 18%;
+    text-align: center;
+}
+
+/*表格修飾*/
+.blueName {
+    color: blue;
+}
+.greenName {
+    color: green;
+}
+.overdue {
+    color: red;
+}
+.soondue {
+    color: #ff8000;
+}
+
+/*隱藏欄位*/
+.colHide {
+    font-weight: normal;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.colHide img {
+    width: 0.75em;
+    margin-left: 2px;
+    vertical-align: 0px;
+}
+
+/*表格內註腳*/
+.annotation {
+    font-size: 0.8em;
+}
+.numberAnno {
+    color: #557493;
+}
+.nameAnno {
+    color: inherit;
+}
+.placeAnno {
+    color: red;
+}
+.addrAnno {
+    color: red;
+    font-size: 0.7em;
+}
+.emailAnno {
+    color: orangered;
+    font-size: 0.7em;
+}
+.indoubt {
+    color: red;
+}
+.movedAddress {
+    color: gray;
+    text-decoration: line-through;
+}
+.redSnum {
+    font-size: 0.9em;
+    color: red;
+}
+.officeTitle {
+    font-size: 0.7em;
+}
+.liaisonTitle {
+    font-size: 0.7em;
+    margin-right: 0.175em;
+}
+.officeNote {
+    font-size: 0.7em;
+}
+
+/*======================================================================================*/
+/* 表單
+/*======================================================================================*/
+#Picker {
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.5em;
+    margin: auto;
+}
+#rows, #page {
+    font-family: Arial;
+    text-align-last: center;
+    width: 4em;
+}
+#BookSearcher,
+#MemberSearcher,
+#SocietySearcher,
+#CirculationSearcher {
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.5em;
+    margin: auto auto 0.35em;
+}
+#bookSearchBox {
+    margin: auto;
+    font-size: inherit;
+    width: 500px;
+}
+#circulationSearchBox, #circulationSearchBox td {
+    margin: auto;
+    font-size: inherit;
+}
+#memberSearchBox, #memberSearchBox td {
+    margin: auto;
+    width: 450px;
+    font-size: inherit;
+    line-height: 1.6em;
+    border: 0px solid;
+}
+#societySearchBox, #societySearchBox td {
+    margin: auto;
+    width: 450px;
+    font-size: inherit;
+    line-height: 1.6em;
+    border: 0px solid;
+}
+#bSearch {
+    width: 98%;
+    font-family: Arial, 細明體;
+}
+#bOption {
+    width: 100%;
+    font-family: Arial, 細明體;
+    text-align-last: left;
+}
+#bSubmit {
+    background: radial-gradient(#d1e8ed, #f0f7f2);
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 5px 1px silver;
+    width: 100%;
+}
+#mSearch {
+    width: 63%;
+    font-family: Arial, 細明體;
+}
+#sSearch {
+    width: 63%;
+    font-family: Arial, 細明體;
+}
+#mOption {
+    width: 33%;
+}
+#sOption {
+    width: 33%;
+}
+#memberRowsAndPages {
+    font-size: 0.85rem;
+    color: grey;
+    text-align: center;
+}
+#societyRowsAndPages {
+    font-size: 0.85rem;
+    color: grey;
+    text-align: center;
+}
+#mSubmit {
+    width: 100%;
+    background: radial-gradient(#d1e8ed, #f0f7f2);
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 5px 1px silver;
+}
+#sSubmit {
+    width: 100%;
+    background: radial-gradient(#d1e8ed, #f0f7f2);
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 5px 1px silver;
+}
+#cSearch {
+    width: 300px;
+    font-family: Arial, 細明體;
+}
+#cOption {
+    width: 150px;
+    text-align-last: left;
+}
+#cSubmit {
+    width: 100%;
+    line-height: 100%;
+    background: radial-gradient(#d1e8ed, #f0f7f2);
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 5px 1px silver;
+}
+.bFirstCol {
+    width: 72%;
+}
+.bSecondCol {
+    width: 28%;
+}
+.bSearchResult {
+    font-size: 0.8rem;
+    color: grey;
+    text-align: left;
+    padding-left: 3px
+}
+.cTimePicker {
+    text-align-last: justify;
+    padding-left: 2px;
+}
+.cSearchResult {
+    font-size: 0.8rem;
+    color: grey;
+    text-align: left;
+    padding-left: 3px
+}
+.TimePicker {
+    width: 163px;
+    font-family: Arial, 細明體;
+}
+
+/*======================================================================================*/
+/* Tooltip 提示
+/*======================================================================================*/
+.TooltipBox {
+    position: relative;
+}
+.TooltipText {
+    visibility: hidden;                     /*此處若設成 hidden，就無法實現淡出效果*/
+    white-space: nowrap;
+    font-size: 0.75rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 5px;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    z-index: 10;
+    /*淡出淡入：0.5秒內透明度從 0% 到 100%*/
+    opacity: 0;
+    transition: all 0.4s;
+}
+.TooltipBox:hover .TooltipText {
+    visibility: visible;
+    opacity: 1;
+}
+table#SocietyData .TooltipText {
+    line-height: 1em;
+}
+
+/*======================================================================================*/
+/* 圖片按鈕
+/*======================================================================================*/
+.ImageButton {
+    font-size: 1rem;
+    width: 0.875em;
+    height: 0.875em;
+    background: none;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+    margin: 0.5px;
+}
+.ImageButtonDisabled {
+    font-size: 1rem;
+    width: 0.875em;
+    height: 0.875em;
+    margin: 0.5px;
+    cursor: url(stop.cur), not-allowed;     /*滑鼠游標變更為自設的禁止圖形*/
+}
+#addBookButton {
+    display: block;
+    height: 1.75em;
+    width: 7em;
+    margin: auto auto 0.15em;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+    background: none;
+}
+#addMemberButton {
+    display: block;
+    height: 1.75em;
+    width: 7em;
+    margin: auto auto;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+    background: none;
+}
+#addSocietyButton {
+    display: block;
+    height: 1.75em;
+    width: 7em;
+    margin: auto auto;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+    background: none;
+}
+#addCirculationButton {
+    display: block;
+    height: 1.75em;
+    width: 7em;
+    margin: auto auto 0.15em;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+    background: none;
+}
+
+/*======================================================================================*/
+/* 表格下方的頁面選擇鈕
+/*======================================================================================*/
+.pageBoxPack {
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    font-size: 0;
+}
+.pgNum {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+.pageBox {
+    background-color: #fdff;
+    box-shadow: 0.5px 0.5px 1px 1px #f0f8;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+.pageBoxFocus {
+    background-color: #d4ecf4;
+    box-shadow: 0.5px 0.5px 1px 1px #4682b4cc;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+.pageFirst {
+    background-color: #fdff;
+    box-shadow: 0.5px 0.5px 1px 1px #f0f8;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+.pageLast {
+    background-color: #fdff;
+    box-shadow: 0.5px 0.5px 1px 1px #f0f8;
+    margin-left: 3px;
+    margin-bottom: 6px;
+}
+.pagePerTen, .pagePerFifty, .pagePerHundred {
+    background-color: #fdff;
+    box-shadow: 0.5px 0.5px 1px 1px #f0f8;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+.pageBox:hover, .pageFirst:hover, .pageLast:hover, .pagePerTen:hover, .pagePerFifty:hover, .pagePerHundred:hover {
+    background-color: peachpuff;
+    box-shadow: 0.5px 0.5px 1px 1px #ffa07acc;
+}
+.pageBoxPack div a {
+    text-decoration: none;
+    color: mediumvioletred;
+}
+.pageBoxPack div:hover a {
+    color: red;
+}
+
+/*======================================================================================*/
+/* 彈窗
+/*======================================================================================*/
+/* 彈窗背景*/
+.ModalBackground {
+    display: none;                          /*預設不顯示*/
+    position: fixed;                        /*固定位置*/
+    z-index: 1;                             /*最上層顯示*/
+    left: 0;                                /*從畫面最左邊開始顯示*/
+    top: 0;                                 /*從畫面最上面開始顯示*/
+    width: 100%;                            /*寬度 = 畫面寬度*/
+    height: 100%;                           /*高度 = 畫面高度*/
+    overflow: auto;                         /*視內容自動應用捲軸*/
+    background-color: rgb(0, 0, 0);         /*瀏覽器不支援 rgba() 時顯示為全黑*/
+    background-color: rgba(0, 0, 0, 0.4);   /*顯示為黑色、透明度 0.4*/
+}
+.ModalErrorBackground {
+    display: none;                          /*預設不顯示*/
+    position: fixed;                        /*固定位置*/
+    z-index: 1;                             /*最上層顯示*/
+    padding-top: 175px;                     /*內部頂端間距*/
+    left: 0;                                /*從畫面最左邊開始顯示*/
+    top: 0;                                 /*從畫面最上面開始顯示*/
+    width: 100%;                            /*寬度 = 畫面寬度*/
+    height: 100%;                           /*高度 = 畫面高度*/
+    overflow: auto;                         /*視內容自動應用捲軸*/
+    background: none;                       /*瀏覽器不支援 rgba() 時無背景*/
+    background-color: rgba(0, 0, 0, 0);     /*背景透明*/
+}
+
+/*彈窗內容框*/
+.ModalContent {
+    background-color: white;                /*背景白色*/
+    margin: auto;                           /*左右置中*/
+    padding: 10px;                          /*內部間距*/
+    padding-bottom: 0px;                    /*特別設定內部底邊距*/
+    width: 400px;                           /*寬度*/
+    top: 50vh;                              /*與畫面頂端的距離為螢幕可視範圍的一半*/
+    border: 10px solid rgba(0, 0, 0, 0.2);  /*邊框*/
+    background-clip: padding-box;           /*背景色不填充至邊框*/
+    overflow: auto;                         /*視內容自動應用捲軸*/
+    position: relative;                     /*設定為相對定位，以便調整內部元素（尤其是關閉按鈕）的位置*/
+    text-align: center;                     /*內部文字置中*/
+}
+#BookEditContent {
+    width: 400px;                           /*寬度*/
+    transform: translateY(-75%);            /*向上移動自身高度的 75%*/
+}
+#MemberEditContent {
+    width: 520px;                           /*寬度*/
+    /*max-height: 550px;                      /*最大高度*/
+    transform: translateY(-50%);            /*向上移動自身高度的一半*/
+}
+#SocietyEditContent {
+    width: 520px;                           /*寬度*/
+    /*max-height: 600px;                      /*最大高度*/
+    transform: translateY(-50%);            /*向上移動自身高度的一半*/
+}
+#CirculationEditContent {
+    width: 400px;                           /*寬度*/
+    transform: translateY(-75%);            /*向上移動自身高度的 75%*/
+}
+.ModalErrorBox {
+    background-color: pink;                 /*背景粉紅色*/
+    margin: auto;                           /*左右置中*/
+    padding: 10px;                          /*內部間距*/
+    border: 0.1px solid #888;               /*邊框*/
+    position: relative;                     /*設定為相對定位，以便調整內部元素（尤其是關閉按鈕）的位置*/
+    text-align: center;                     /*內部文字置中*/
+}
+#BookErrorBox{
+    width: 300px;                           /*寬度*/
+}
+
+/*彈窗標題*/
+.EditTitle {
+    display: inline-block;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+    text-shadow: 0.1px 0.1px 1px !important;
+}
+
+/*彈窗關閉按鈕*/
+.ModalClose {
+    display: inline-block;
+    color: #aaa;
+    margin: 0px;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 0.5em;
+    position: absolute;
+    top: 12px;
+    right: 9px;
+    cursor: pointer;                        /*滑鼠游標經過時變更為手掌形*/
+}
+.ModalClose:hover {
+    color: red;
+}
+
+/*彈窗內部表單及內容框架（表格）*/
+.ModalForm {
+    margin-bottom: 0px;
+}
+.ModalFrame {
+    margin-top: 2px;
+}
+.ModalFrame input, .ModalFrame select, .ModalFrame textarea {
+    background-color: #ffdf;
+}
+#BookModalForm table, #BookModalForm th, #BookModalForm td,
+#MemberModalForm table, #MemberModalForm th, #MemberModalForm td,
+#SocietyModalForm table, #SocietyModalForm th, #SocietyModalForm td,
+#CirculationModalForm table, #CirculationModalForm th, #CirculationModalForm td {
+    border: 0px solid;
+    width: 100%;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+.fieldLabel {
+    font-weight: bold;
+    text-align-last: justify;
+    white-space: nowrap;
+}
+.fieldLabelCenter {
+    font-weight: bold;
+    text-align-last: center;
+    letter-spacing: 0.25em;
+    white-space: nowrap;
+}
+.colon {
+    font-weight: bold;
+    text-align: center;
+    padding: 0px
+}
+.noteLabel {
+    font-size: 0.8em;
+    text-align-last: justify;
+    padding-left: 0.45rem;
+    white-space: nowrap;
+}
+.noteLabelColon {
+    font-size: 0.8em;
+}
+.ModalFrame tr td input[type="text"],
+.ModalFrame tr td input[type="date"],
+.ModalFrame tr td select {
+    width: 100%;
+}
+.BookDataID, .MemberDataID, .SocietyDataID, .CirculationDataID {
+    width: 100%;
+    border: none;
+    background-color: lightgray;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+#DeleteMessage {
+    display: none;
+    color: red;
+}
+.radioTd {
+    text-align: center;
+}
+.radioTd label {
+    font-size: 0.8rem;
+}
+.radioTd label:nth-child(2) {
+    margin-left: 1em;
+}
+.radioTd input[type="radio"] {
+    zoom: 0.925;
+    vertical-align: -1.5px
+}
+#mNumber, #mNumberNote,
+#mName, #mNameNote,
+#mAlias, #mPseudonym,
+#mAncestralHome1, #mAncestralHome2,
+#mAncestralHomeNote1, #mAncestralHomeNote2,
+#mZipCode1, #mZipCode2,
+#mHomeNumber1, #mHomeNumber2,
+#mOfficeNumber1, #mOfficeNumber2,
+#mOfficeNumberNote1, #mOfficeNumberNote2,
+#mPhoneNumber1, #mPhoneNumber2,
+#mFaxNumber,
+#mEmailAddress1, #mEmailAddress2, #mEmailAddress3 {
+    text-align: center;
+}
+#mBirthday, #mJoinday, #mExpirationDate {
+    text-align: center;
+    font-family: Arial, MingLiU;
+}
+#mAddressNote1, #mAddressNote2 {
+    display: none;
+}
+#mNote {
+    resize: none;
+    width: 100%;
+    height: 3em;
+}
+.bracketAroundInput {
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: center;
+    padding-left: 6.5px;
+}
+#sNumber, #sOldNumber, #sNumberNote,
+#sName, #sForShort, #sUnifiedCode, #sZipCode,
+#sOfficeNumber1, #sOfficeNumber2, #sFaxNumber,
+#sPiCName, #sPiCTitle, #sPiCNote,
+#sRpnName, #sRpnTitle, #sRpnNote, #sRpnExt, #sRpnPhone,
+#sLs1Name, #sLs1Title, #sLs1Note, #sLs1Ext, #sLs1Phone,
+#sLs2Name, #sLs2Title, #sLs2Note, #sLs2Ext, #sLs2Phone,
+#sLs3Name, #sLs3Title, #sLs3Note, #sLs3Ext, #sLs3Phone {
+    text-align: center;
+}
+#sBirthday, #sJoinday, #sLastPayDay {
+    text-align: center;
+    font-family: Arial, MingLiU;
+}
+#sNote {
+    resize: none;
+    width: 100%;
+    height: 3em;
+}
+#cbMn {
+    background-color: #ffdf;
+    --webkit-ime-mode: disabled;
+}
+#CirculationDealContent {
+    width: 500px;                           /*寬度*/
+    height: 500px;
+    /*max-height: 550px;                    /*最大高度*/
+    transform: translateY(-50%);            /*向上移動自身高度的一半*/
+}
+#CirculationDealFrame {
+    width: 100%;
+}
+.greyTitle {
+    background-color: lightgrey;
+    font-weight: bolder;
+    width: 10%;
+}
+.inputTitle {
+    width: 40%;
+}
+.inputTitle input {
+    width: 95%;
+}
+#brdisp {
+    margin-top: 0.75em;
+    font-size: 0.9rem;
+    width: 100%;
+    line-height: 1.5em;
+}
+#brdisp th {
+    background: linear-gradient(silver, rgba(240, 240, 240, 1.0));
+}
+#brdisp td {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.brdbn {
+    width: 12%;
+}
+.brdbn input {
+    width: 100%;
+    text-align: center;
+    ime-mode: deactivated;
+}
+.brdbm {
+    width: 44%;
+    text-align: left;
+    text-align-last: left;
+}
+.brdbm input {
+    width: 100%;
+}
+.brdbt {
+    width: 29%;
+}
+.brdbt input {
+    width: 100%;
+    text-align-last: center;
+}
+.brdrt {
+    width: 15%;
+}
+#sneer, #expire {
+    color: red;
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    margin: 8px auto auto;
+}
+#soonexpire {
+    color: orangered;
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    margin: 8px auto auto;
+}
+
+/*======================================================================================*/
+/* 彈窗內的按鈕
+/*======================================================================================*/
+/*令按鈕置中的外框*/
+.Pack {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+}
+
+/*按鈕本體*/
+.ModalButton {
+    width: 80px;
+    margin: auto 1em;
+}
+
+/*======================================================================================*/
+/* 分隔線
+/*======================================================================================*/
+.seg {
+    border: none;
+    background-color: #cccf;
+    height: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+/*======================================================================================*/
+/* 錯誤及禁制訊息
+/*======================================================================================*/
+.overPage {
+    font-size: 0.9rem;
+    width: 350px;
+    margin: 1em auto 1em;
+    padding: 0.3em;
+    border: 2px solid crimson;
+    background-color: pink;
+    text-align: center;
+    line-height: 1.5em
+}
+.adminOnly {
+    font-size: 0.9rem;
+    width: 350px;
+    margin: 3em auto 2em;
+    padding: 0.3em;
+    border: 2px solid crimson;
+    background-color: pink;
+    text-align: center;
+    line-height: 3em
+}
+
+/*======================================================================================*/
+/* 隱藏標籤
+/*======================================================================================*/
+#ErrorInfo, #IDMax, .baMax {
+    display: none;
+}
+.CollapseAndHidden, .CollapseAndHidden * {
+    visibility: collapse;
+    line-height: 0px;
+    padding: 0px;
+}
+.fontSizeZero {
+    font-size: 0px;
+}
+.fontSizeZero label {
+    font-size: 1rem;
+    margin-right: 2.5rem;
+}
+htag {
+    display: none;
+}
+
+/*======================================================================================*/
+/* 底部訊息
+/*======================================================================================*/
+.footerBox {
+    text-align: center;
+    font-size: 0.75em;
+    margin-top: 1.25em;
+    margin-bottom: 0.75em;
+    color: gray;
+}
+.footer {
+    margin: auto;
+}
