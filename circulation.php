@@ -278,7 +278,7 @@
     <form action="" method="GET" id="CirculationSearcher">
         <table id="circulationSearchBox">
             <tr>
-                <td style="width: 460px; text-align-last: justify">
+                <td style="width: 462px; text-align-last: justify">
                     <!--搜尋表單-->
                     <input type="text" id="cSearch" name="Search" value="<?php if (isset($_GET["Search"])) echo $_GET["Search"]; ?>">
                     <select id="cOption" name="Option">
