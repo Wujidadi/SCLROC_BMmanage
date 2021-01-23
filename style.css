@@ -829,7 +829,7 @@ table#CirculationData tbody tr.soondue:hover td {
     padding-left: 3px
 }
 .cTimePicker {
-    text-align-last: justify;
+    /* text-align-last: justify; */
     padding-left: 2px;
 }
 .cSearchResult {
