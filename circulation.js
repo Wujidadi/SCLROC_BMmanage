@@ -229,7 +229,9 @@ function circultion_display_num(n) {
                     <p id=\"soonexpire\">您尚未繳交今年度的會費，記得在年底之前繳交喔！</p>\
                 ");
             }
-            if (mspf == 1) {
+            if ($("#cbMn").val() == 1685) {
+                k = 14;
+            } else if (mspf == 1) {
                 k = 21;
             } else {
                 k = 7;
