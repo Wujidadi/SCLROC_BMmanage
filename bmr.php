@@ -35,7 +35,7 @@
         }
         echo json_encode($json);
     } else {
-        echo '';
+        echo '{}';
     }
 
     mysqli_close($db_link);
